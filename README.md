@@ -28,4 +28,5 @@ It replace the current value about activity in hovercard into real time, along w
 
 ## 🔌 Download from other sources
 
-- [invisionize.pl](https://forum.invisionize.pl/files/file/830-axen-full-width-widget-containers/)
+- [invisionize.pl](https://forum.invisionize.pl/files/file/834-axen-last-activity-in-hovercard/)
+- [invisioncommunity.com](https://invisioncommunity.com/files/file/9895-axen-last-activity-in-hovercard/)
