@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="(aXen) Last activity in Hovercard" version_long="10000" version_human="1.0.0" author="aXenDev" website="https://axendev.net/" update_check="http://axendev.net/myapps/plugins/lastactivityinhovercard/check.php"><hooks><hook type="S" class="\IPS\Theme\class_core_front_profile" filename="3052415bc3741ecb565166565492dbc2"><![CDATA[//<?php
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	exit;
+}
+
+class hook834 extends _HOOK_CLASS_
+{
+
+/* !Hook Data - DO NOT REMOVE */
+public static function hookData() {
+ return array_merge_recursive( array (
+  'hovercard' => 
+  array (
+    0 => 
+    array (
+      'selector' => 'div.cUserHovercard > div.ipsFlex > p:nth-child(4)',
+      'type' => 'replace',
+      'content' => '<p class=\'ipsType_reset ipsType_medium ipsType_light\'>
+	{{if $member->isOnline() AND ( !$member->isOnlineAnonymously() OR ( $member->isOnlineAnonymously() AND \IPS\Member::loggedIn()->isAdmin() ) )}}
+		<i class="fa fa-circle ipsType_medium ipsOnlineStatus_online" data-ipsTooltip title=\'{{if $member->isOnlineAnonymously()}}{lang="online_now_anon" sprintf="$member->name"}{{elseif $member->isOnline()}}{lang="online_now" sprintf="$member->name"}{{endif}}\'></i>
+	{{endif}}
+	{{if $member->isOnline() AND ( !$member->isOnlineAnonymously() OR ( $member->isOnlineAnonymously() AND \IPS\Member::loggedIn()->isAdmin() ) )}}
+		{datetime="$member->last_activity"}
+	{{elseif $member->last_activity}}
+		{lang="members_last_visit"} {datetime="$member->last_activity"}
+	{{endif}}
+</p>
+
+{{if $member->isOnline() AND ( !$member->isOnlineAnonymously() OR ( $member->isOnlineAnonymously() AND \IPS\Member::loggedIn()->isAdmin() ) )}}
+	<p class=\'ipsType_reset ipsType_medium ipsType_light ipsType_center\'>
+		{$member->location()|raw}
+	</p>
+{{endif}}',
+    ),
+  ),
+), parent::hookData() );
+}
+/* End Hook Data */
+
+
+}
+]]></hook></hooks><widgets/><htmlFiles/><cssFiles/><jsFiles/><resourcesFiles/><lang/><versions><version long="10000" human="1.0.0"><![CDATA[//<?php
+
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Install Code
+ */
+class ips_plugins_setup_install
+{
+	/**
+	 * ...
+	 *
+	 * @return	array	If returns TRUE, upgrader will proceed to next step. If it returns any other value, it will set this as the value of the 'extra' GET parameter and rerun this step (useful for loops)
+	 */
+	public function step1()
+	{
+		
+
+		return TRUE;
+	}
+	
+	// You can create as many additional methods (step2, step3, etc.) as is necessary.
+	// Each step will be executed in a new HTTP request
+}]]></version></versions></plugin>
