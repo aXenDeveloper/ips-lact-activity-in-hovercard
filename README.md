@@ -1,6 +1,6 @@
 # (aXen) Last activity in Hovercard
 
-It replace the current value about activity in hovercard into real time, along with his last activity.
+Converts the current value of hovercard activity to real time along with its last activity.
 
 ## 🏷️ Requirements
 
