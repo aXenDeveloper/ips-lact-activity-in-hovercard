@@ -4,7 +4,7 @@ Converts the current value of hovercard activity to real time along with its las
 
 ## 🏷️ Requirements
 
-- [IPS Community Suite: 4.6 version](https://invisioncommunity.com/)
+- [IPS Community Suite: 4.6, 4.7 version](https://invisioncommunity.com/)
 
 ## 🧰 Install
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin name="(aXen) Last activity in Hovercard" version_long="10000" version_human="1.0.0" author="aXenDev" website="https://axendev.net/" update_check="http://axendev.net/myapps/plugins/lastactivityinhovercard/check.php"><hooks><hook type="S" class="\IPS\Theme\class_core_front_profile" filename="3052415bc3741ecb565166565492dbc2"><![CDATA[//<?php
+<plugin name="(aXen) Last activity in Hovercard" version_long="10001" version_human="1.0.1" author="aXenDev" website="https://axendev.net/" update_check="http://axendev.net/myapps/plugins/lastactivityinhovercard/check.php"><hooks><hook type="S" class="\IPS\Theme\class_core_front_profile" filename="3052415bc3741ecb565166565492dbc2"><![CDATA[//<?php
 
 /* To prevent PHP errors (extending class does not exist) revealing path */
 if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
@@ -57,6 +57,35 @@ if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
  * Install Code
  */
 class ips_plugins_setup_install
+{
+	/**
+	 * ...
+	 *
+	 * @return	array	If returns TRUE, upgrader will proceed to next step. If it returns any other value, it will set this as the value of the 'extra' GET parameter and rerun this step (useful for loops)
+	 */
+	public function step1()
+	{
+		
+
+		return TRUE;
+	}
+	
+	// You can create as many additional methods (step2, step3, etc.) as is necessary.
+	// Each step will be executed in a new HTTP request
+}]]></version><version long="10001" human="1.0.1"><![CDATA[//<?php
+
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !\defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * 1.0.1 Upgrade Code
+ */
+class ips_plugins_setup_upg_10001
 {
 	/**
 	 * ...
